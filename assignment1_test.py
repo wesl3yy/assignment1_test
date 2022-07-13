@@ -2,16 +2,28 @@ import io
 import sys
 from unittest import mock
 import pytest
-
 from assignment1 import show_square
 
 DATA1 = [
-    ("case1:test1", {"output": {}, "input": []}, "", False),
+    (
+        "case1:test1",
+        {
+            "output": {},
+            "input": [],
+        },
+        "",
+        False,
+    ),
     (
         "case2:test2",
         {
             "output": {"key": "value"},
-            "input": [{"number": 1}, {"number": 2}, {"number": 3}, {"number": 4}],
+            "input": [
+                {"number": 1},
+                {"number": 2},
+                {"number": 3},
+                {"number": 4},
+            ],
         },
         """1
 Found
@@ -25,7 +37,12 @@ Found
         "case3:test3",
         {
             "output": {"key": "value"},
-            "input": [{"number": 4}, {"number": 5}, {"number": 6}, {"number": 7}],
+            "input": [
+                {"number": 4},
+                {"number": 5},
+                {"number": 6},
+                {"number": 7},
+            ],
         },
         """16
 25
@@ -42,7 +59,12 @@ def get_data():
 
 
 def get_data_list():
-    return [{"number": 1}, {"number": 2}, {"number": 3}, {"number": 4}]
+    return [
+        {"number": 1},
+        {"number": 2},
+        {"number": 3},
+        {"number": 4},
+    ]
 
 
 @pytest.mark.parametrize(["case", "data", "output_params", "expect"], DATA1)
